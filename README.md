@@ -1,5 +1,7 @@
 ## Proyecto: Análisis de Comportamiento y Segmentación - ConnectaTel
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/macarenahulsken/connectatel-data-analysis/blob/main/Project_ConnectaTel.ipynb)
+
 El objetivo de la empresa es identificar patrones de uso, detectar comportamientos atípicos y comprender qué segmentos de clientes muestran necesidades diferenciadas, con el fin de optimizar la oferta comercial y mejorar la experiencia del usuario.
 
 **Análisis ejecutivo**
