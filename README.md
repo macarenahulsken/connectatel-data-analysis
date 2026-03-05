@@ -1,10 +1,10 @@
 ## Proyecto: Análisis de Comportamiento y Segmentación - ConnectaTel
 
+El objetivo de la empresa es identificar patrones de uso, detectar comportamientos atípicos y comprender qué segmentos de clientes muestran necesidades diferenciadas, con el fin de optimizar la oferta comercial y mejorar la experiencia del usuario.
+
 #Análisis ejecutivo
 
 ⚠️ Problemas detectados en los datos
-
-El análisis inicial reveló inconsistencias que requirieron limpieza para no sesgar los resultados:
 
 Se realizó una estandarización de los datos, convirtiendo los tipos a los correctos
 
@@ -43,3 +43,6 @@ Optimización de Planes: Crear un plan intermedio. Dado que el salto del Básico
 Estrategia de Retención: Investigar el 11.7% de clientes con ciudad desconocida; la falta de datos geográficos puede estar ocultando problemas de cobertura regional que deriven en churn (cancelación).
 
 Control de Consumo: Implementar alertas de consumo para los "outliers". Si un usuario del plan Básico alcanza duraciones de llamadas extremas, ofrecerle promociones inmediatas para migrar a un plan con más minutos.
+
+Tecnologías: 
+Python, Pandas, Seaborn, Matplotlib.pyplot, Numpy
