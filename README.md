@@ -1,50 +1,40 @@
-## Proyecto: Análisis de Comportamiento y Segmentación - ConnectaTel
+## Project: Usage Behavior and Customer Segmentation Analysis – ConnectaTel
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/macarenahulsken/connectatel-data-analysis/blob/main/Project_ConnectaTel.ipynb)
 
-El objetivo de la empresa es identificar patrones de uso, detectar comportamientos atípicos y comprender qué segmentos de clientes muestran necesidades diferenciadas, con el fin de optimizar la oferta comercial y mejorar la experiencia del usuario.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com)
 
-**Análisis ejecutivo**
+Business Objective:
+The primary goal is to identify usage patterns, detect anomalies (outliers), and understand which customer segments exhibit distinct needs. These insights will be used to optimize the commercial offering and enhance the overall user experience (UX).
 
-⚠️ Problemas detectados en los datos
+**Executive Summary**
 
-Se realizó una estandarización de los datos, convirtiendo los tipos a los correctos
+⚠️ Data Quality & Integrity Issues
 
-Inconsistencias en la columna city: Tenía un 11.7% de datos faltantes (469 filas) y la presencia del carácter "?" como sentinel, lo que se resolvió con reeplazo a nulos.
+The initial phase revealed inconsistencies that required rigorous cleaning to prevent statistical bias:
 
-Inconsistencias en age: se encontraron sentinels ''-999' que se reemplazaron por la mediana.
+Data Standardization: All features were cast to their appropriate data types for precise computation.
+Geographic Inconsistencies: The city column contained 11.7% missing values (469 records) and "?" placeholders. These were standardized to nulls for accurate reporting.
+Sentinel Values: The age column contained "-999" placeholders, which were corrected using Median Imputation to preserve the distribution. Missing Data Mechanism (MAR): A diagnostic check confirmed that nulls in duration (55.2%) and length (44.7%) are Missing At Random (MAR). They correlate directly with the service type: "text" records naturally have null duration, while "call" records have null text length.
+Outlier Management: We applied Winsorization to the call_minutes column. This statistical capping ensures that average consumption metrics are not inflated by extreme, atypical user behavior.
+🔍 Demographic Insights (Age & Location) ConnectaTel’s user profile shows a distinct distribution:
 
-Se detectó que los nulos en duration (55.2%) y en length (44.7%) se deben a la relación de estos valores con el type de dato: si es mensaje, la duración es nula y si es llamada, la longitud de texto es nula.
+Primary Demographics: The core user base is aged 30–50, with a dominant presence in major hubs like Bogotá (the highest frequency city).
+Plan Adoption: The Basic Plan is the market leader across all age brackets, accounting for 2,595 out of 4,000 analyzed users.
+📊 Usage Segmentation & Behavior We identified two clear consumption profiles based on service interaction:
 
-Se ajustaron estadísticamente los valores extremos (Winsorización) en cant_minutos_llamada para asegurar que el promedio de consumo no se viera inflado por comportamientos atípicos.
+Messaging-Centric (Text): This is the high-frequency service with 22,092 records, significantly outperforming voice calls in volume.
+Voice-Centric (Call): While lower in frequency, voice usage shows higher variability in duration, requiring closer monitoring.
+Power Users (Outliers): Significant extreme usage was detected, including single calls lasting up to 120 minutes and messages exceeding 1,490 characters.
+➡️ Strategic Implications
 
-🔍 Segmentos por Edad El perfil demográfico de ConnectaTel muestra una distribución interesante:
+Business Value: While Premium users drive higher margins, the Basic plan holds the massive volume of data. This represents a major Upselling opportunity for users consistently exceeding their plan limits.
+Operational Risk: Extreme usage patterns (2-hour calls) suggest a niche group using residential lines for commercial or professional purposes, which could impact network stability and profit margins for "unlimited" tiers.
+💡 Strategic Recommendations
 
-Jóvenes y Adultos: La edad promedio de los usuarios ronda los 30-50 años, con una presencia notable en ciudades principales como Bogotá (la ciudad con mayor frecuencia).
+Tier Optimization: Introduce a "Basic Plus" intermediate plan. A plan focused on higher SMS limits could capture the large segment currently stuck between Basic and Premium.
+Retention Strategy: Investigate the 11.7% of users with unknown locations. This "blind spot" may hide regional coverage issues that lead to Churn (customer cancellation).
+Real-Time Usage Alerts: Implement automated alerts for high-usage outliers. If a Basic user hits an extreme threshold, trigger an immediate promotional offer to migrate them to a higher-tier plan.
 
-Comportamiento: Se observa que el plan Básico es el más adoptado por la mayoría de los rangos de edad, representando a 2,595 usuarios del total de 4,000 analizados.
-
-📊 Segmentos por Nivel de Uso
-
-Se identificaron dos perfiles de consumo claros basados en el tipo de servicio:
-
-Usuarios de Mensajería (Text): Es el servicio más frecuente con 22,092 registros de uso, superando a las llamadas de voz.
-
-Usuarios de Voz (Call): Representan una menor frecuencia pero generan mayor variabilidad en los datos de duración.
-
-Outliers (Uso Extremo): Se detectaron valores atípicos significativos, como llamadas de hasta 120 minutos y mensajes con longitudes de 1,490 caracteres.
-
-➡️ Esto sugiere que... Valor para el negocio: Los clientes del plan Premium son los más valiosos económicamente, pero el volumen masivo de datos está en el plan Básico, donde existe una oportunidad de upselling (migración de plan) si detectamos quiénes exceden constantemente sus límites.
-
-Implicación de Outliers: Los patrones de uso extremo (llamadas de 2 horas o mensajes larguísimos) sugieren que un pequeño grupo de usuarios está utilizando el servicio para fines comerciales o profesionales, lo que podría afectar la estabilidad de la red o los márgenes de los planes ilimitados.
-
-💡 Recomendaciones
-
-Optimización de Planes: Crear un plan intermedio. Dado que el salto del Básico al Premium puede ser grande, un plan "Básico Plus" enfocado en más SMS podría captar al segmento que más utiliza el servicio de texto.
-
-Estrategia de Retención: Investigar el 11.7% de clientes con ciudad desconocida; la falta de datos geográficos puede estar ocultando problemas de cobertura regional que deriven en churn (cancelación).
-
-Control de Consumo: Implementar alertas de consumo para los "outliers". Si un usuario del plan Básico alcanza duraciones de llamadas extremas, ofrecerle promociones inmediatas para migrar a un plan con más minutos.
-
-Tecnologías: 
+Technologies & Tools: 
 Python, Pandas, Seaborn, Matplotlib.pyplot, Numpy
