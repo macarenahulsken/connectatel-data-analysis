@@ -1,8 +1,7 @@
 ## Project: Usage Behavior and Customer Segmentation Analysis – ConnectaTel
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/macarenahulsken/connectatel-data-analysis/blob/main/Project_ConnectaTel.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/macarenahulsken/connectatel-data-analysis/blob/main/ConnectaTel_Analysis.ipynb)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com)
 
 Business Objective:
 The primary goal is to identify usage patterns, detect anomalies (outliers), and understand which customer segments exhibit distinct needs. These insights will be used to optimize the commercial offering and enhance the overall user experience (UX).
