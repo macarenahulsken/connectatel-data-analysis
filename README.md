@@ -2,7 +2,8 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/macarenahulsken/connectatel-data-analysis/blob/main/ConnectaTel_Analysis.ipynb)
 
-**[LinkedIn](www.linkedin.com/in/macarena-hulsken)
+**[LinkedIn](www.linkedin.com/in/macarena-hulsken)**
+
 Mail: macarenahulsken@gmail.com
 
 
